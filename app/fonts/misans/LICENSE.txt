@@ -1,0 +1,6 @@
+MiSans font
+Copyright (c) Xiaomi Inc. All rights reserved.
+Official font page: https://hyperos.mi.com/font/
+License: MiSans Font Intellectual Property License Agreement
+This project uses MiSans for Chinese text rendering.
+The webfont files here are generated from the MiSans VF package: https://www.npmjs.com/package/misans
