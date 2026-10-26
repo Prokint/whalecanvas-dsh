@@ -1,0 +1,23 @@
+name: import-source
+on:
+  push:
+    paths:
+      - whalecanvas-dsh-import.tar.gz
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Unpack archive
+        run: |
+          tar -xzf whalecanvas-dsh-import.tar.gz -C .
+          rm whalecanvas-dsh-import.tar.gz
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: import whalecanvas-dsh source"
+          git push
